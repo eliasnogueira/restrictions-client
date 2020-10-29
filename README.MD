@@ -4,7 +4,7 @@ This test project belongs to a set of projects listed bellow:
 * [restrictions-test](https://github.com/eliasnogueira/restrictions-test)
 * [test-commons](https://github.com/eliasnogueira/test-commons)
 
-## What this project does?
+## What does this project do?
 This is the client project for the [credit-restrictions-api](https://github.com/eliasnogueira/credit-restrictions-api) 
 and the [restrictions-test](https://github.com/eliasnogueira/restrictions-test).
 You need to run locally the API service to be able to run the tests.
