@@ -33,12 +33,14 @@ import org.apache.http.HttpStatus;
 
 public class RestrictionsClient extends RestClient {
 
-    public static final String BASE_URI = ConfigurationManager.getConfiguration().baseUri();
-    public static final String BASE_PATH = ConfigurationManager.getConfiguration().basePath();
-    public static final String PORT = String.valueOf(ConfigurationManager.getConfiguration().port());
+    private static final String BASE_URI = ConfigurationManager.getConfiguration().baseUri();
+    private static final String BASE_PATH = ConfigurationManager.getConfiguration().basePath();
+    private static final String PORT = String.valueOf(ConfigurationManager.getConfiguration().port());
 
-    public static final String VERSION = "/v1";
-    public static final String RESTRICTIONS = "/restrictions";
+    private static final String VERSION = "/v1";
+    private static final String RESTRICTIONS = "/restrictions";
+
+    public static final String CPF = "{cpf}";
 
     public RestrictionsClient() {
         super(BASE_URI, PORT, BASE_PATH, VERSION);
@@ -49,7 +51,7 @@ public class RestrictionsClient extends RestClient {
             given().
                 pathParam("cpf", cpf).
             when().
-                get(getPath(RESTRICTIONS + SLASH + "{cpf}")).
+                get(getPath(RESTRICTIONS + SLASH + CPF)).
             then().
                 statusCode(HttpStatus.SC_OK);
     }
@@ -58,7 +60,7 @@ public class RestrictionsClient extends RestClient {
         given().
             pathParam("cpf", cpf).
         when().
-            get(getPath(RESTRICTIONS + SLASH + "{cpf}")).
+            get(getPath(RESTRICTIONS + SLASH + CPF)).
         then().
             statusCode(HttpStatus.SC_NOT_FOUND);
     }
