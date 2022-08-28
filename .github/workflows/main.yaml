@@ -38,6 +38,6 @@ jobs:
       - name: Removing -SNAPSHOT
         run: mvn versions:set -DremoveSnapshot
       - name: Publish artifact on GitHub Packages
-        run: mvn -B clean deploy -DskipTests
+        run: mvn -B clean deploy -DskipTests -s $GITHUB_WORKSPACE/.github/workflows/maven-settings.xml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
