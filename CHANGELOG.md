@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - GitHub actions to automatically deploy this package
+- Added `maven-settings.xml` to pull the dependencies from GitHub packages
 
 ### Changed
 - Update `test-commons.version` to `1.0.3`
