@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.3] - 28-08-2022
 
+### Added
+- GitHub actions to automatically deploy this package
+
 ### Changed
 - Update `test-commons.version` to `1.0.3`
 - Update `maven-compiler-plugin` to `3.10.1`
