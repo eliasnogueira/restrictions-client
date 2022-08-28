@@ -21,7 +21,10 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
       - name: Build with Maven
-        run: mvn -DskipTests -B package --file pom.xml
+        run: mvn -s $GITHUB_WORKSPACE/.github/workflows/maven-settings.xml -DskipTests -B package --file pom.xml
+          env:
+            USER_NAME: ${{ secrets.USER_NAME }}
+            ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
   artifact:
     name: Publish Artifact
     runs-on: ubuntu-latest
