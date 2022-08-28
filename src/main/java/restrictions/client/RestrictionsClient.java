@@ -51,7 +51,7 @@ public class RestrictionsClient extends RestClient {
             given().
                 pathParam("cpf", cpf).
             when().
-                get(getPath(RESTRICTIONS + SLASH + CPF)).
+                get(getPath(RESTRICTIONS + BACKSLASH + CPF)).
             then().
                 statusCode(HttpStatus.SC_OK);
     }
@@ -60,7 +60,7 @@ public class RestrictionsClient extends RestClient {
         given().
             pathParam("cpf", cpf).
         when().
-            get(getPath(RESTRICTIONS + SLASH + CPF)).
+            get(getPath(RESTRICTIONS + BACKSLASH + CPF)).
         then().
             statusCode(HttpStatus.SC_NOT_FOUND);
     }
