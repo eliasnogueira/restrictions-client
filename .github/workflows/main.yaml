@@ -40,4 +40,5 @@ jobs:
       - name: Publish artifact on GitHub Packages
         run: mvn -B clean deploy -DskipTests -s $GITHUB_WORKSPACE/.github/workflows/maven-settings.xml
         env:
+          USER_NAME: eliasnogueira
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
