@@ -23,8 +23,8 @@ jobs:
       - name: Build with Maven
         run: mvn -s $GITHUB_WORKSPACE/.github/workflows/maven-settings.xml -DskipTests -B package --file pom.xml
         env:
-          USER_NAME: ${{ secrets.USER_NAME }}
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          USER_NAME: eliasnogueira
+          ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   artifact:
     name: Publish Artifact
     runs-on: ubuntu-latest
